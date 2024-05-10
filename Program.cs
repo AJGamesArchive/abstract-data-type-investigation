@@ -10,7 +10,10 @@ internal class Program
         Snowflake snowflake = Tools.createCoreSnowflake();
 
         // Run the initial code test
-        Tests.initialCodeTest(snowflake);
+        // Tests.initialCodeTest(snowflake);
+
+        // Run initial code test with big data set
+        Tests.initialCodeTestBigDataSet(snowflake);
 
         // Hold program at end and await key press
         Console.ReadLine();
