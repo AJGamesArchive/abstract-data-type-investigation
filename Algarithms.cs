@@ -22,12 +22,12 @@ namespace abstract_data_type_investigation
         /// </param>
         public static void makeArrayChangesLoops(this Player[] players, Changes[] changes)
         {
-            for(int i = 0; i < changes.Length; i++)
+            foreach (Changes change in changes)
             {
-                for(int j = 0; j < players.Length; j++)
+                foreach (Player player in players)
                 {
-                    if (changes[i].getPlayerID() != players[j].getSnowflake()) continue;
-                    players[j].updateHealth(changes[i].getHealthChange());
+                    if (change.getPlayerID() != player.getSnowflake()) continue;
+                    player.updateHealth(change.getHealthChange());
                     break;
                 }
             }

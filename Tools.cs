@@ -20,8 +20,8 @@ namespace abstract_data_type_investigation
         public static Snowflake createCoreSnowflake()
         {
             Random random = new Random();
-            long dataCenterID = random.Next(100, 1000);
-            long workerID = random.Next(100, 1000);
+            long dataCenterID = random.Next(0, 32);
+            long workerID = random.Next(0, 32);
             Snowflake snowflake = new Snowflake(dataCenterID, workerID);
             return snowflake;
         }

@@ -52,6 +52,7 @@ namespace abstract_data_type_investigation
             long endMemoryArray = GC.GetTotalMemory(true);
             Console.WriteLine("Array Test:");
             Console.WriteLine($"Time taken: {stopwatch.Elapsed}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
             stopwatch.Reset();
 
             long startMemoryLinkedList = GC.GetTotalMemory(true);
