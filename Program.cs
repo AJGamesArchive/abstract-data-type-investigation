@@ -9,16 +9,10 @@ internal class Program
         // Generate the core snowflake object
         Snowflake snowflake = Tools.createCoreSnowflake();
 
-        // Generate an array of players
-        Player[] playersArray = Tools.generatePlayerArray(10, snowflake);
+        // Run the initial code test
+        Tests.initialCodeTest(snowflake);
 
-        // Generate a linked list of players
-        LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(10, snowflake);
-
-        // Generate an array of changes for both the player array and linked list
-        Changes[] playerArrayChanges = Tools.generateArrayChanges(5, 10, playersArray);
-        Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(5, 10, playersLinkedList);
-
-
+        // Hold program at end and await key press
+        Console.ReadLine();
     }
 }

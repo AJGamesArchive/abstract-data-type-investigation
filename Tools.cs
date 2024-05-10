@@ -93,7 +93,7 @@ namespace abstract_data_type_investigation
             {
                 int playerIndex = random.Next(0, playersArray.Length);
                 long playerId = playersArray[playerIndex].getSnowflake();
-                changes[i] = new Changes(playerId, healthChange);
+                changes[i] = new Changes(playerId, (random.Next(0, 2) == 0) ? healthChange : -healthChange);
             }
             return changes;
         }
@@ -127,7 +127,7 @@ namespace abstract_data_type_investigation
                 }
 
                 long playerId = playerNode.Value.getSnowflake();
-                changes[i] = new Changes(playerId, healthChange);
+                changes[i] = new Changes(playerId, (random.Next(0, 2) == 0) ? healthChange : -healthChange);
             }
             return changes;
         }
