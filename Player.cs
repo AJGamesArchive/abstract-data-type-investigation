@@ -28,12 +28,15 @@ namespace abstract_data_type_investigation
 
         /// <summary>
         /// Function to update a players health by a given value and mark a player as dead if their health drops to 0.
+        /// Will not allow a player to have more than 100 health and will not allow a player to come back to life once dead.
         /// </summary>
         /// <param name="changeValue">
         /// The value to change the players health by. (Possitive for increase, Negative for decrease)
         /// </param>
         public void updateHealth(int changeValue)
         {
+            if (health == 100) return;
+            if (dead) return;
             health += changeValue;
             if(health <= 0) dead = true;
         }
@@ -50,17 +53,6 @@ namespace abstract_data_type_investigation
         }
 
         /// <summary>
-        /// Function to check if the player is dead.
-        /// </summary>
-        /// <returns>
-        /// Returns a boolean to indicate life or death.
-        /// </returns>
-        public bool isDead()
-        {
-            return dead;
-        }
-
-        /// <summary>
         /// Function to generate the starting health of a player.
         /// </summary>
         /// <returns>
@@ -70,6 +62,14 @@ namespace abstract_data_type_investigation
         {
             Random random = new Random();
             return random.Next(10, 91);
+        }
+
+        /// <returns>
+        /// Returns the players snowflake ID.
+        /// </returns>
+        public long getSnowflake()
+        {
+            return id;
         }
     }
 }

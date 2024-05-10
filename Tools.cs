@@ -69,5 +69,67 @@ namespace abstract_data_type_investigation
             }
             return playerLinkedList;
         }
+
+        /// <summary>
+        /// Function to generate a random selection of changes to make to the players array.
+        /// </summary>
+        /// <param name="changesCount">
+        /// The nubmer of changes to generate.
+        /// </param>
+        /// <param name="healthChange">
+        /// The value to change each selected players health by.
+        /// </param>
+        /// <param name="playersArray">
+        /// The generated array of players.
+        /// </param>
+        /// <returns>
+        /// Returns a Changes[] of all generated changes.
+        /// </returns>
+        public static Changes[] generateArrayChanges(int changesCount, int healthChange, Player[] playersArray)
+        {
+            Random random = new Random();
+            Changes[] changes = new Changes[changesCount];
+            for(int i = 0; i < changesCount; i++)
+            {
+                int playerIndex = random.Next(0, playersArray.Length);
+                long playerId = playersArray[playerIndex].getSnowflake();
+                changes[i] = new Changes(playerId, healthChange);
+            }
+            return changes;
+        }
+
+        /// <summary>
+        /// Function to generate a random selection of changes to make to the players linked list.
+        /// </summary>
+        /// <param name="changesCount">
+        /// The nubmer of changes to generate.
+        /// </param>
+        /// <param name="healthChange">
+        /// The value to change each selected players health by.
+        /// </param>
+        /// <param name="playersArray">
+        /// The generated linked list of players.
+        /// </param>
+        /// <returns>
+        /// Returns a Changes[] of all generated changes.
+        /// </returns>
+        public static Changes[] generateLinkedListChanges(int changesCount, int healthChange, LinkedList<Player> playersLinkedList)
+        {
+            Random random = new Random();
+            Changes[] changes = new Changes[changesCount];
+            for (int i = 0; i < changesCount; i++)
+            {
+                int playerIndex = random.Next(0, playersLinkedList.Count);
+                LinkedListNode<Player> playerNode = playersLinkedList.First;
+                for (int j = 0; j < playerIndex; j++)
+                {
+                    playerNode = playerNode.Next;
+                }
+
+                long playerId = playerNode.Value.getSnowflake();
+                changes[i] = new Changes(playerId, healthChange);
+            }
+            return changes;
+        }
     }
 }
