@@ -29,6 +29,7 @@ namespace abstract_data_type_investigation
             Player[] playersArray = Tools.generatePlayerArray(10, snowflake);
             LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(10, snowflake);
 
+            
             Console.WriteLine("Outputing starting player array:");
             foreach (Player player in playersArray)
             {
@@ -41,9 +42,10 @@ namespace abstract_data_type_investigation
                 Console.WriteLine(player.ToString());
             }
             Console.WriteLine("");
+            
 
-            Changes[] playerArrayChanges = Tools.generateArrayChanges(5, 10, playersArray);
-            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(5, 10, playersLinkedList);
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(10, 10, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(10, 10, playersLinkedList);
 
             long startMemoryArray = GC.GetTotalMemory(true);
             stopwatch.Start();
@@ -51,7 +53,7 @@ namespace abstract_data_type_investigation
             stopwatch.Stop();
             long endMemoryArray = GC.GetTotalMemory(true);
             Console.WriteLine("Array Test:");
-            Console.WriteLine($"Time taken: {stopwatch.Elapsed}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
             Console.WriteLine("");
             stopwatch.Reset();
 
@@ -61,10 +63,11 @@ namespace abstract_data_type_investigation
             stopwatch.Stop();
             long endMemoryLinkedList = GC.GetTotalMemory(true);
             Console.WriteLine("Linked List Test:");
-            Console.WriteLine($"Time taken to update linked list: {stopwatch.Elapsed}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
             Console.WriteLine("");
             stopwatch.Reset();
 
+            
             Console.WriteLine("Outputing ending player array:");
             foreach (Player player in playersArray)
             {
@@ -77,6 +80,7 @@ namespace abstract_data_type_investigation
                 Console.WriteLine(player.ToString());
             }
             Console.WriteLine("");
+            
 
             Console.WriteLine("Initial Code Test Complete");
             return;
