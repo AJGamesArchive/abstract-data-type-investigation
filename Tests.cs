@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Runtime;
+using System.Numerics;
 
 namespace abstract_data_type_investigation
 {
@@ -26,8 +27,8 @@ namespace abstract_data_type_investigation
             Console.WriteLine("");
             Stopwatch stopwatch = new Stopwatch();
 
-            Player[] playersArray = Tools.generatePlayerArray(10, snowflake);
-            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(10, snowflake);
+            Player[] playersArray = Tools.generatePlayerArray(5, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(5, snowflake);
 
             
             Console.WriteLine("Outputing starting player array:");
@@ -44,8 +45,23 @@ namespace abstract_data_type_investigation
             Console.WriteLine("");
             
 
-            Changes[] playerArrayChanges = Tools.generateArrayChanges(10, 10, playersArray);
-            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(10, 10, playersLinkedList);
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(5, 5, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(5, 5, playersLinkedList);
+
+
+            Console.WriteLine("Outputing generated changes for array:");
+            foreach (Changes change in playerArrayChanges)
+            {
+                Console.WriteLine(change.ToString());
+            }
+            Console.WriteLine("");
+            Console.WriteLine("Outputing generated changes for linked list:");
+            foreach (Changes change in playerLinkedListChanges)
+            {
+                Console.WriteLine(change.ToString());
+            }
+            Console.WriteLine("");
+
 
             long startMemoryArray = GC.GetTotalMemory(true);
             stopwatch.Start();

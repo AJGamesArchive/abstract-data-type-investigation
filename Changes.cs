@@ -45,5 +45,16 @@ namespace abstract_data_type_investigation
         {
             return healthChange;
         }
+
+        /// <summary>
+        /// .ToString() override to return the changes details as a single string.
+        /// </summary>
+        /// <returns>
+        /// Returns a string of all the changes details.
+        /// </returns>
+        public override string ToString()
+        {
+            return $"Player ID: {playerID}\nHealth Change: {healthChange}";
+        }
     }
 }

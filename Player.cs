@@ -35,10 +35,12 @@ namespace abstract_data_type_investigation
         /// </param>
         public void updateHealth(int changeValue)
         {
-            if (health == 100) return;
+            if (health >= 100) return;
             if (dead) return;
             health += changeValue;
-            if(health <= 0) dead = true;
+            if (health >= 100) health = 100;
+            if (health <= 0) { health = 0; dead = true; }
+            return;
         }
 
         /// <summary>
