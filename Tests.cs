@@ -275,5 +275,117 @@ namespace abstract_data_type_investigation
             Console.WriteLine("Initial Code Test (Big Data Set) Complete");
             return;
         }
+
+        /// <summary>
+        /// TASK 1 - Initial Testing
+        /// Function to perform scaled up initial tests with a bigger data set.
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void initialCodeTestLargeDataSet(Snowflake snowflake)
+        {
+            Console.WriteLine("Initial Code Test (Large Data Set) Started");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+
+
+            Console.WriteLine("Test 1 - 100,000 Players per ADT, 50,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(100000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(100000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(50000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(50000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+
+
+            Console.WriteLine("Test 2 - 100,000 Players per ADT, 50,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            playersArray = Tools.generatePlayerArray(100000, snowflake);
+            playersLinkedList = Tools.generatePlayerLinkedList(100000, snowflake);
+
+            playerArrayChanges = Tools.generateArrayChanges(50000, 1, playersArray);
+            playerLinkedListChanges = Tools.generateLinkedListChanges(50000, 1, playersLinkedList);
+
+            long startMemoryArrayA2 = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArrayA2 = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArrayA2 - startMemoryArrayA2}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedListL2 = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedListL2 = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedListL2 - startMemoryLinkedListL2}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+
+
+            Console.WriteLine("Test 3 - 100,000 Players per ADT, 50,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            playersArray = Tools.generatePlayerArray(100000, snowflake);
+            playersLinkedList = Tools.generatePlayerLinkedList(100000, snowflake);
+
+            playerArrayChanges = Tools.generateArrayChanges(50000, 1, playersArray);
+            playerLinkedListChanges = Tools.generateLinkedListChanges(50000, 1, playersLinkedList);
+
+            long startMemoryArrayA3 = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArrayA3 = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArrayA3 - startMemoryArrayA3}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedListL3 = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedListL3 = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedListL3 - startMemoryLinkedListL3}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+
+
+            Console.WriteLine("Initial Code Test (Big Data Set) Complete");
+            return;
+        }
     }
 }
