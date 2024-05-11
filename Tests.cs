@@ -387,5 +387,633 @@ namespace abstract_data_type_investigation
             Console.WriteLine("Initial Code Test (Big Data Set) Complete");
             return;
         }
+
+
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed health changes test on 100 players
+        /// Health Changes: 100,000
+        /// Players: 100
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedChangesTestOne(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 1 - 100 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(100, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(100, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(100000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed health changes test on 1,000 players
+        /// Health Changes: 100,000
+        /// Players: 1,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedChangesTestTwo(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 2 - 1,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(1000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(1000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(100000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed health changes test on 2,000 players
+        /// Health Changes: 100,000
+        /// Players: 2,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedChangesTestThree(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 3 - 2,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(2000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(2000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(100000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed health changes test on 4,000 players
+        /// Health Changes: 100,000
+        /// Players: 4,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedChangesTestFour(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 4 - 4,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(4000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(4000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(100000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed health changes test on 6,000 players
+        /// Health Changes: 100,000
+        /// Players: 6,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedChangesTestFive(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 5 - 6,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(6000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(6000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(100000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed health changes test on 8,000 players
+        /// Health Changes: 100,000
+        /// Players: 8,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedChangesTestSix(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 6 - 8,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(8000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(8000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(100000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed health changes test on 10,000 players
+        /// Health Changes: 100,000
+        /// Players: 10,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedChangesTestSeven(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 7 - 10,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(10000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(10000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(100000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed players test with 50,000 changes
+        /// Health Changes: 50,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedPlayersTestOne(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 1 - 5,000 Players per ADT, 50,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(50000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(50000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed players test with 100,000 changes
+        /// Health Changes: 100,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedPlayersTestTwo(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 2 - 5,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(100000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed players test with 200,000 changes
+        /// Health Changes: 200,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedPlayersTestThree(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 3 - 5,000 Players per ADT, 200,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(200000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(200000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed players test with 300,000 changes
+        /// Health Changes: 300,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedPlayersTestFour(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 4 - 5,000 Players per ADT, 300,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(300000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(300000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed players test with 400,000 changes
+        /// Health Changes: 400,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedPlayersTestFive(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 5 - 5,000 Players per ADT, 400,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(400000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(400000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 2 - ADT Testing...
+        /// Function to perform a fixed players test with 500,000 changes
+        /// Health Changes: 500,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void fixedPlayersTestSix(Snowflake snowflake)
+        {
+            Console.WriteLine("Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 6 - 5,000 Players per ADT, 500,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+            LinkedList<Player> playersLinkedList = Tools.generatePlayerLinkedList(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(500000, 1, playersArray);
+            Changes[] playerLinkedListChanges = Tools.generateLinkedListChanges(500000, 1, playersLinkedList);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesLoops(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            long startMemoryLinkedList = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersLinkedList.makeLinkedListChangesLoops(playerLinkedListChanges);
+            stopwatch.Stop();
+            long endMemoryLinkedList = GC.GetTotalMemory(true);
+            Console.WriteLine("Linked List Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryLinkedList - startMemoryLinkedList}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
     }
 }
