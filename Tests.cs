@@ -1015,5 +1015,531 @@ namespace abstract_data_type_investigation
             Console.WriteLine("Test Complete");
             return;
         }
+
+
+
+        /// <summary>
+        /// TASK 3 - Initial Binary Search Testing
+        /// Function to perform initial tests on the binary search algorithm to ensure there are no bugs.
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryInitialCodeTest(Snowflake snowflake)
+        {
+            Console.WriteLine("Initial Binary Search Test Started");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Player[] playersArray = Tools.generatePlayerArray(10, snowflake);
+
+            Console.WriteLine("Outputing starting player array:");
+            foreach (Player player in playersArray)
+            {
+                Console.WriteLine(player.ToString());
+            }
+            Console.WriteLine("");
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(10, 10, playersArray);
+
+            Console.WriteLine("Outputing generated changes for array:");
+            foreach (Changes change in playerArrayChanges)
+            {
+                Console.WriteLine(change.ToString());
+            }
+            Console.WriteLine("");
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Outputing ending player array:");
+            foreach (Player player in playersArray)
+            {
+                Console.WriteLine(player.ToString());
+            }
+            Console.WriteLine("");
+
+            Console.WriteLine("Initial Binary Search Test Complete");
+            return;
+        }
+
+
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed health changes test on 100 players
+        /// Health Changes: 100,000
+        /// Players: 100
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedChangesTestOne(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 1 - 100 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(100, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed health changes test on 1,000 players
+        /// Health Changes: 100,000
+        /// Players: 1,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedChangesTestTwo(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 2 - 1,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(1000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed health changes test on 2,000 players
+        /// Health Changes: 100,000
+        /// Players: 2,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedChangesTestThree(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 3 - 2,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(2000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed health changes test on 4,000 players
+        /// Health Changes: 100,000
+        /// Players: 4,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedChangesTestFour(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 4 - 4,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(4000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed health changes test on 6,000 players
+        /// Health Changes: 100,000
+        /// Players: 6,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedChangesTestFive(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 5 - 6,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(6000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed health changes test on 8,000 players
+        /// Health Changes: 100,000
+        /// Players: 8,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedChangesTestSix(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 6 - 8,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(8000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed health changes test on 10,000 players
+        /// Health Changes: 100,000
+        /// Players: 10,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedChangesTestSeven(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Health Changes Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 7 - 10,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(10000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed players test with 50,000 changes
+        /// Health Changes: 50,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedPlayersTestOne(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 1 - 5,000 Players per ADT, 50,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(50000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed players test with 100,000 changes
+        /// Health Changes: 100,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedPlayersTestTwo(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 2 - 5,000 Players per ADT, 100,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(100000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed players test with 200,000 changes
+        /// Health Changes: 200,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedPlayersTestThree(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 3 - 5,000 Players per ADT, 200,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(200000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed players test with 300,000 changes
+        /// Health Changes: 300,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedPlayersTestFour(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 4 - 5,000 Players per ADT, 300,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(300000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed players test with 400,000 changes
+        /// Health Changes: 400,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedPlayersTestFive(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 5 - 5,000 Players per ADT, 400,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(400000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
+
+        /// <summary>
+        /// TASK 3 - Binary Search Testing
+        /// Function to perform a fixed players test with 500,000 changes
+        /// Health Changes: 500,000
+        /// Players: 5,000
+        /// </summary>
+        /// <param name="snowflake">
+        /// The core snowflake that snowflake IDs can be generated from.
+        /// </param>
+        public static void binaryFixedPlayersTestSix(Snowflake snowflake)
+        {
+            Console.WriteLine("Binary Fixed Players Test");
+            Console.WriteLine("");
+            Stopwatch stopwatch = new Stopwatch();
+
+            Console.WriteLine("Test 6 - 5,000 Players per ADT, 500,000 Changes per ADT, 1 Health Change Value");
+            Console.WriteLine("");
+
+            Player[] playersArray = Tools.generatePlayerArray(5000, snowflake);
+
+            Changes[] playerArrayChanges = Tools.generateArrayChanges(500000, 1, playersArray);
+
+            long startMemoryArray = GC.GetTotalMemory(true);
+            stopwatch.Start();
+            playersArray.makeArrayChangesBinary(playerArrayChanges);
+            stopwatch.Stop();
+            long endMemoryArray = GC.GetTotalMemory(true);
+            Console.WriteLine("Array Test:");
+            Console.WriteLine($"Time taken: {stopwatch.ElapsedMilliseconds}\nMemory used: {endMemoryArray - startMemoryArray}");
+            Console.WriteLine("");
+            stopwatch.Reset();
+
+            Console.WriteLine("Test Complete");
+            return;
+        }
     }
 }

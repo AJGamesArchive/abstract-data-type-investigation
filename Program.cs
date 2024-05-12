@@ -72,6 +72,54 @@ internal class Program
 
             // Run fixed players test 6 - 500,000 changes
             if (input == "p-6") Tests.fixedPlayersTestSix(snowflake);
+
+
+
+            // Run the initial binary search test
+            if (input == "b-i-s") Tests.binaryInitialCodeTest(snowflake);
+
+
+
+            // Run binary fixed health changes test 1 - 100 players
+            if (input == "b-h-1") Tests.binaryFixedChangesTestOne(snowflake);
+
+            // Run binary fixed health changes test 2 - 1,000 players
+            if (input == "b-h-2") Tests.binaryFixedChangesTestTwo(snowflake);
+
+            // Run binary fixed health changes test 3 - 2,000 players
+            if (input == "b-h-3") Tests.binaryFixedChangesTestThree(snowflake);
+
+            // Run binary fixed health changes test 4 - 4,000 players
+            if (input == "b-h-4") Tests.binaryFixedChangesTestFour(snowflake);
+
+            // Run binary fixed health changes test 5 - 6,000 players
+            if (input == "b-h-5") Tests.binaryFixedChangesTestFive(snowflake);
+
+            // Run binary fixed health changes test 6 - 8,000 players
+            if (input == "b-h-6") Tests.binaryFixedChangesTestSix(snowflake);
+
+            // Run binary fixed health changes test 7 - 10,000 players
+            if (input == "b-h-7") Tests.binaryFixedChangesTestSeven(snowflake);
+
+
+
+            // Run binary fixed players test 1 - 50,000 changes
+            if (input == "b-p-1") Tests.binaryFixedPlayersTestOne(snowflake);
+
+            // Run binary fixed players test 2 - 100,000 changes
+            if (input == "b-p-2") Tests.binaryFixedPlayersTestTwo(snowflake);
+
+            // Run binary fixed players test 3 - 200,000 changes
+            if (input == "b-p-3") Tests.binaryFixedPlayersTestThree(snowflake);
+
+            // Run binary fixed players test 4 - 300,000 changes
+            if (input == "b-p-4") Tests.binaryFixedPlayersTestFour(snowflake);
+
+            // Run binary fixed players test 5 - 400,000 changes
+            if (input == "b-p-5") Tests.binaryFixedPlayersTestFive(snowflake);
+
+            // Run binary fixed players test 6 - 500,000 changes
+            if (input == "b-p-6") Tests.binaryFixedPlayersTestSix(snowflake);
         }
     }
 }
